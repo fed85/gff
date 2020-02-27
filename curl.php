@@ -10,7 +10,7 @@ $header[] = "X-AppVersion: 3.30.2";
 $header[] = "X-UniqueId: ".time()."57".mt_rand(1000,9999);
 $header[] = "Connection: keep-alive";
 $header[] = "X-User-Locale: en_ID";
-$header[] = "X-Location: -6.246265,106.690718";
+$header[] = "X-Location: -5.134383028654992,119.690718";
 $header[] = "X-Location-Accuracy: 3.0";
 if ($pin):
 $header[] = "pin: $pin";
@@ -158,7 +158,7 @@ function claim($token)
       else
         {
       save("error_log.txt", json_encode($claim));
-        return false;
+        return true;
         }
     }
     function claim1($token)
@@ -169,12 +169,6 @@ function claim($token)
         {
         return $claim['data']['message'];
         }
-      else
-        {
-      save("error_log.txt", json_encode($claim));
-        return true;
-        }
-    }
     function food($token)
     {
     $data = '{"promo_code":"GOFOOD022620A"}';    
@@ -183,12 +177,6 @@ function claim($token)
         {
         return $claim['data']['message'];
         }
-      else
-        {
-      save("error_log.txt", json_encode($claim));
-        return true;
-        }
-    }
      function ride($token)
     {
     $data = '{"promo_code":"COBAGORIDE"}';    
@@ -217,7 +205,7 @@ function claim($token)
         return false;
         }
     }
-     function pengen($token)
+     function claim($token)
     {
     $data = '{"promo_code":"GOFOOD022620A"}';    
     $claim = request("/go-promotions/v1/promotions/enrollments", $token, $data);
@@ -228,7 +216,7 @@ function claim($token)
       else
         {
       save("error_log.txt", json_encode($claim));
-        return false;
+        return true;
         }
     }
 ?>
