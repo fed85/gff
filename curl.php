@@ -149,7 +149,7 @@ function verif($otp, $token)
     }
 function claim($token)
     {
-    $data = '{"promo_code":"GOFOOD022620A"}';    
+    $data = '{"promo_code":"GOFOOD021120A"}';    
     $claim = request("/go-promotions/v1/promotions/enrollments", $token, $data);
     if ($claim['success'] == 1)
         {
@@ -188,12 +188,12 @@ function claim($token)
       else
         {
       save("error_log.txt", json_encode($claim));
-          return false;
+          return true;
         }
     }
      function cekvocer($token)
     {
-    $data = '{"promo_code":"GOFOOD022620A"}';    
+    $data = '{"promo_code":"COBAGOCAR"}';    
     $claim = request("/go-promotions/v1/promotions/enrollments", $token, $data);
     if ($claim['success'] == 1)
         {
@@ -202,7 +202,7 @@ function claim($token)
       else
         {
       save("error_log.txt", json_encode($claim));
-        return false;
+        return true;
         }
     }
      function claim($token)
