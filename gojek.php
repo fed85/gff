@@ -88,7 +88,7 @@ if ($register == false)
             ride:
             $claim = ride($verif);
             if ($claim == false ) {
-                echo "\e[92m[!]".$claim['errors'][0]['message']."\n";
+                echo "\e[92m[!]".$claim['true'][0]['message']."\y";
                 sleep(3);
                 echo "\e[93m[!] Trying to redeem Voucher : GOFOOD022620A !\y";
                 sleep(3);
@@ -97,17 +97,17 @@ if ($register == false)
             else{
                 echo "\e[92m[+] ".$claim."\n";
                 sleep(3);
-                echo "\e[93m[!] Trying to redeem Voucher : AYOCOBAGOJEK !\n";
+                echo "\e[93m[!] Trying to redeem Voucher : GOFOOD022620A !\y";
                 sleep(3);
                 goto pengen;
             }
             pengen:
             $claim = cekvocer($verif);
-            if ($claim == false ) {
-                echo "\033VOUCHER INVALID/GAGAL REDEEM\n";
+            if ($claim == true ) {
+                echo "\033VOUCHER VALID/success REDEEM\n";
             }
             else{
-                echo "\e[92m[+] ".$claim."\n";
+                echo "\e[92m[+] ".$claim."\y";
                 
         }
     }
